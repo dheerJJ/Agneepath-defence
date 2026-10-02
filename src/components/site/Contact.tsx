@@ -135,8 +135,8 @@ export function FloatingActions() {
   useEffect(() => { const f = () => setShow(window.scrollY > 600); window.addEventListener("scroll", f, { passive: true }); return () => window.removeEventListener("scroll", f); }, []);
   return (
     <div className="fixed bottom-3 right-3 sm:bottom-4 sm:right-4 z-40 flex flex-col items-end gap-2.5 sm:gap-3">
-      {show && <button onClick={() => window.scrollTo({ top: 0 })} aria-label="Back to top" className="rounded-full border border-cream/20 bg-olive p-2.5 sm:p-3 text-cream shadow-card hover:bg-olive-light"><ArrowUp className="h-4 w-4 sm:h-5 sm:w-5" /></button>}
-      <a href={contact.phoneHref} aria-label="Call now" className="flex items-center gap-2 rounded-full bg-gradient-saffron px-3.5 py-2.5 sm:px-4 sm:py-3 text-xs sm:text-sm font-semibold text-ink shadow-glow sm:hidden"><Phone className="h-4 w-4 sm:h-5 sm:w-5" /> Call</a>
+      {show && <button onClick={() => window.scrollTo({ top: 0 })} aria-label="Back to top" className="grid h-10 w-10 sm:h-12 sm:w-12 place-items-center rounded-full border border-cream/20 bg-olive text-cream shadow-card hover:bg-olive-light"><ArrowUp className="h-5 w-5" /></button>}
+      <a href={contact.phoneHref} aria-label="Call now" className="grid h-12 w-12 sm:h-14 sm:w-14 place-items-center rounded-full bg-gradient-saffron text-ink shadow-card transition hover:scale-110"><Phone className="h-6 w-6 sm:h-7 sm:w-7" /></a>
       <a href={contact.whatsapp} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp" className="grid h-12 w-12 sm:h-14 sm:w-14 place-items-center rounded-full bg-whatsapp text-ink shadow-card transition hover:scale-110"><MessageCircle className="h-6 w-6 sm:h-7 sm:w-7" /></a>
     </div>
   );
